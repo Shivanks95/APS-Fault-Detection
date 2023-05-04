@@ -9,6 +9,15 @@ def error_message_detail(error, error_detail: sys):
     return error_message
 
 
+
 class SensorException(Exception):
 
     def __init__(self,error_message,error_details:sys):
+        self.error_message = error_message_detail(
+            error_message, error_detail=error_details)
+
+    def __str__(self):
+        return self.error_message
+
+
+
